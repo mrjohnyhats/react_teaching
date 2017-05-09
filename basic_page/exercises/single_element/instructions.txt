@@ -1,0 +1,1 @@
+render an html element with react by writing in the html and js files. 

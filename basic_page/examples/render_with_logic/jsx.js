@@ -16,7 +16,7 @@ var boopStyle = {
     margin: '5vw'
 };
 
-function mapBeepToUpdate(beep){
+function mapRenderToUpadte(beep){
     if(beep){
         ReactDOM.render(beepElem, document.getElementById('app'));
     }
@@ -31,5 +31,5 @@ var boopElem = <div style={boopStyle}>boop</div>;
 var beep = true
 setInterval(function(){
     beep = !beep;
-    mapBeepToUpdate(beep);
+    mapRenderToUpadte(beep);
 }, 750);

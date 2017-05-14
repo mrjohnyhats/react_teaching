@@ -1,0 +1,6 @@
+1. The first thing is to have her get a basic html page up, with the relevant script tags.
+2. Show her some examples of basic JSX Expressions, and then provide some exercises that require her to render basic JSX expressions on her html page.
+3. Show her some examples of basic JSX Expressions that have nested html elements, and corresponding exercises.
+4. Show her some examples of JSX Expressions that inject javascript expressions into them using curly brackets. Then have some corresponding exercises.
+5. Show her a couple examples of how to have conditional JSX expressions. (a) just have a javascript conditional, and render different content depending upon the values of the boolean expressions in the javascript conditional, (b) use the ternary operator in the jsx.
+6. How do we write JSX expressions that inject a javascript array/list? provide a couple exercises.

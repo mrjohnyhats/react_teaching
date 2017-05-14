@@ -5,4 +5,6 @@ var myElem = <div>
     })}
 </div>;
 
+var myElem = <div>hello world!</div>
+
 ReactDOM.render(myElem, document.getElementById('app'));

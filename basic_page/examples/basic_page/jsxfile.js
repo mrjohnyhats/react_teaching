@@ -1,4 +1,4 @@
-const langsAndCodes = [
+var langsAndCodes = [
   {
     "code": "ar",
     "name": "Arabic"
@@ -197,44 +197,44 @@ const langsAndCodes = [
   }
 ];
 
-const myHeader = <h1>my translation page!</h1>;
+var myHeader = <h1>my translation page!</h1>;
 
-let lang = 'nl';
-let curText = '';
-let output = <div></div>;
+var lang = 'nl';
+var curText = '';
+var output = <div></div>;
 
-const handleLangChange = (e) => {
+var handleLangChange = function(e){
     lang = e.target.value;
     updateOutput();
 };
 
-const mySelector = <select onChange={handleLangChange}>
-    { langsAndCodes.map((l, i) => (<option key={i} value={l['code']}>{l['name']}</option>) ) }
+var mySelector = <select onChange={handleLangChange}>
+    { langsAndCodes.map(function(l, i){ return (<option key={i} value={l['code']}>{l['name']}</option>)} ) }
 </select>
 
-const updateOutput = () => {
-    const url = `http://www.transltr.org/api/translate?text=${curText}&to=${lang}&from=en`;
+var updateOutput = function(){
+    var url = `http://www.transltr.org/api/translate?text=${curText}&to=${lang}&from=en`;
     $.ajax({
-        url,
-        complete: (res, status) => {
+        url: url,
+        complete: function(res, status){
             console.log(`status: ${status}`);
-            const text = JSON.parse(res.responseText)['translationText'];
+            var text = JSON.parse(res.responseText)['translationText'];
             console.log(text);
             update(text);
         }
     });
 };
 
-const handleInputChange = (e) => {
+var handleInputChange = function(e){
     curText = e.target.value;
     updateOutput();
 };
 
-const myInput = <input type="text" onChange={handleInputChange}/>;
+var myInput = <input type="text" onChange={handleInputChange}/>;
 
 
-const update = (text) => {
-    const elem = <div>
+var update = function(text){
+    var elem = <div>
         {myHeader}
         {myInput}
         {mySelector}

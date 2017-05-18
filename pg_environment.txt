@@ -9,3 +9,9 @@ Only brief nudity is allowed in a PG film
 Profanity may be present in PG movies
 Nothing in a PG environment should strongly caution parents
 There is no drug use content in a PG environment
+
+examples:
+	Shrek was moved up to PG due to:
+		mild action
+		rude humor
+		brief language

@@ -1,6 +1,6 @@
 var myHeader = <h1>my translation page!</h1>;
 
-var lang = 'ar';
+var lang = 'ar'
 var curText = '';
 var output = <div></div>;
 

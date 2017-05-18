@@ -2,7 +2,6 @@ var myHeader = <h1>my translation page!</h1>;
 
 var lang = 'ar'
 var curText = '';
-var output = <div></div>;
 
 var mySelector = <select onChange={handleLangChange}>
     { langsAndCodes.map(function(l, i){ return (<option key={i} value={l['code']}>{l['name']}</option>)} ) }

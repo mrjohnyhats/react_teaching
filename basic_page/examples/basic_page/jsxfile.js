@@ -203,16 +203,26 @@ var lang = 'nl';
 var curText = '';
 var output = <div></div>;
 
-var handleLangChange = function(e){
-    lang = e.target.value;
-    updateOutput();
-};
-
 var mySelector = <select onChange={handleLangChange}>
     { langsAndCodes.map(function(l, i){ return (<option key={i} value={l['code']}>{l['name']}</option>)} ) }
 </select>
 
-var updateOutput = function(){
+var myInput = <input type="text" onChange={handleInputChange}/>;
+
+update();
+
+
+function update(text){
+    var elem = <div>
+        {myHeader}
+        {myInput}
+        {mySelector}
+        <div>{text}</div>
+    </div>;
+    ReactDOM.render(elem, document.getElementById('app'));
+}
+
+function updateOutput(){
     var url = `http://www.transltr.org/api/translate?text=${curText}&to=${lang}&from=en`;
     $.ajax({
         url: url,
@@ -223,23 +233,14 @@ var updateOutput = function(){
             update(text);
         }
     });
-};
+}
 
-var handleInputChange = function(e){
+function handleLangChange(e){
+    lang = e.target.value;
+    updateOutput();
+}
+
+function handleInputChange(e){
     curText = e.target.value;
     updateOutput();
 };
-
-var myInput = <input type="text" onChange={handleInputChange}/>;
-
-
-var update = function(text){
-    var elem = <div>
-        {myHeader}
-        {myInput}
-        {mySelector}
-        <div>{text}</div>
-    </div>;
-    ReactDOM.render(elem, document.getElementById('app'));
-};
-update();

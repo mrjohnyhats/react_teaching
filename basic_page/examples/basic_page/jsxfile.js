@@ -16,7 +16,6 @@ var myInput = <textarea style={inputStyles} type="text" onChange={handleInputCha
 
 update();
 
-
 function update(text){
     var elem = <div>
         {myHeader}

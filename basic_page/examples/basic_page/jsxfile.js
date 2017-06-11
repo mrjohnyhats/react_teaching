@@ -27,7 +27,7 @@ function update(text){
 }
 
 function updateOutput(){
-    var url = `http://www.transltr.org/api/translate?text=${curText}&to=${lang}&from=en`;
+    var url = 'http://www.transltr.org/api/translate?text='+curText+'&to='lang'&from=en';
     $.ajax({
         url: url,
         complete: function(res, status){
